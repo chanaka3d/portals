@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
+import Config from 'Conf/Settings';
 
 export default function Apis() {
     const [apis, setApis] = useState(null);
     useEffect(() => {
-        fetch('http://localhost:9443/api/am/publisher/v3/apis/?limit=5&offset=0&sortBy=name&sortOrder=asc')
+        fetch(`${Config.API_TRANSPORT}://${Config.API_HOST}:${Config.API_PORT}/api/am/publisher/v3/apis/?limit=5&offset=0&sortBy=name&sortOrder=asc`)
             .then(response => {
                 return response.json()
             })
@@ -11,18 +12,19 @@ export default function Apis() {
                 let apis = json.list;
                 setApis(apis);
             })
+
     }, [])
-    if(apis && apis.length === 0) {
-        return ( <div>no apis</div>)
+    if (apis && apis.length === 0) {
+        return (<div>no apis</div>)
     }
     if (!apis) {
-        return ( <div>loading ..</div>)
+        return (<div>loading ..</div>)
     }
     return (
         <div className="wrapper">
             <div className="container">
                 <div className="table">
-                    <table cellSpacing="0" cellPadding="0" style={{paddingTop: 100}}>
+                    <table cellSpacing="0" cellPadding="0" style={{ paddingTop: 200 }}>
                         <thead>
                             <tr>
                                 <td colSpan="2"><font className="header">APIs</font> </td>
@@ -37,7 +39,7 @@ export default function Apis() {
                             </tr>
                         </thead>
                         <tbody>
-                            {apis.map( api => (<tr>
+                            {apis.map(api => (<tr>
                                 <td>{api.name}</td>
                                 <td>{api.version}</td>
                                 <td>{api.context}</td>
