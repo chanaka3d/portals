@@ -34,10 +34,3 @@ npm run watch
 Now base on the config provided visit the front end app. With the default port config, it's https://localhost:4000.
 Also NodeJs routes can be accessed example: https://localhost:4000/users
 
-### Start the  Server
-
-Nodemon should be installed - so all changes to the server will be automatically reloaded.  You should be up and running at localhost:3000
-
-```console
-npm start
-```
