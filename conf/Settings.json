@@ -1,0 +1,8 @@
+
+{
+    "API_PORT" : 9443,
+    "API_HOST" : "localhost",
+    "API_TRANSPORT" : "http",
+    "IDP_CLIENT_ID" : "T0Po-zLDzKtJHosmgKZZaXhABijNaFWJ",
+    "IDP_DOMAIN" : "construct.auth0.com"
+}

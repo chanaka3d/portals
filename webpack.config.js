@@ -13,6 +13,9 @@ module.exports = (env) => {
     entry: {
       main: path.resolve(__dirname, './client/src/index.js'),
     },
+    externals: {
+      'Configurator': JSON.stringify(require('./conf/Settings.json'))
+    },
     module: {
       rules: [
         {
