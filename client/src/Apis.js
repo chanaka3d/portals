@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import Config from 'Conf/Settings';
+import Settings from 'Settings';
 
 export default function Apis() {
     const [apis, setApis] = useState(null);
     useEffect(() => {
-        fetch(`${Config.API_TRANSPORT}://${Config.API_HOST}:${Config.API_PORT}/api/am/publisher/v3/apis/?limit=5&offset=0&sortBy=name&sortOrder=asc`)
+        fetch(`${Settings.API_TRANSPORT}://${Settings.API_HOST}:${Settings.API_PORT}/api/am/publisher/v3/apis/?limit=5&offset=0&sortBy=name&sortOrder=asc`)
             .then(response => {
                 return response.json()
             })
