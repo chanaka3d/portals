@@ -40,8 +40,8 @@ function login() {
         code_challenge: codeChallenge,
         code_challenge_method: "S256"
       });
-      window.location = "https://dev-kw-oeodk.us.auth0.com/authorize?" + args;  
-    })  
+      window.location = "https://dev-kw-oeodk.us.auth0.com/authorize?" + args;
+    })
 }
 
 const LoginButton = () => {
