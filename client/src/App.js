@@ -4,7 +4,6 @@ import Profile from './Profile';
 import LoginButton from './LoginButton';
 import LogoutButton from './LogoutButton';
 import Apis from './Apis';
-import Config from 'Conf/Settings';
 
 function App() {
 
@@ -13,7 +12,6 @@ function App() {
       <nav className="container">
         <input id="nav-toggle" type="checkbox" />
         <div className="logo">
-        {Config.API_HOST}
           WSO2 <strong style={{"color": "#153b66", "font-weight": "800"}}>API Manager</strong>
         </div>
         <ul className="links">

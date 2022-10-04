@@ -1,4 +1,4 @@
-const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = (env) => {
@@ -32,13 +32,23 @@ module.exports = (env) => {
       ]
     },
     output: {
-      path: path.resolve(__dirname, './client/dist'),
+      path: path.resolve(__dirname, './client/public'),
       filename: 'bundle.js',
     },
+    plugins: [
+      new HtmlWebpackPlugin({
+        title: 'Custom template',
+        // Load a custom template (lodash by default)
+        template: './client/src/index.html'
+      })
+    ],
     resolve: {
       alias: {
-        Conf: path.resolve(__dirname, 'conf'),
+        client: path.resolve(__dirname, 'client/src'),
       },
+    },
+    externals: {
+      Settings: 'Settings',
     },
     devtool: 'source-map',
   }

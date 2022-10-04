@@ -23,14 +23,14 @@ var app = express();
 app.use(connectLiveReload());
 
 // // view engine setup
-// app.set('views', path.join(__dirname, 'views'));
-// app.set('view engine', 'jade');
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
 
-// app.use(logger('dev'));
-// app.use(express.json());
-// app.use(express.urlencoded({ extended: false }));
-// app.use(cookieParser());
-// app.use(express.static(path.join(__dirname, 'public')));
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Server side route definitions
 
@@ -40,12 +40,12 @@ app.use('/users', usersRouter);
 /* ******************************** */
 /* ******************************** */
 app.use(
-  express.static(path.join(__dirname, "./client/dist"))
+  express.static(path.join(__dirname, "./client/public"))
 );
 
 app.get("*", (req, res) => {
   res.sendFile(
-    path.join(__dirname, "./client/dist/index.html")
+    path.join(__dirname, "./client/public/index.html")
   );
 });
 
