@@ -18,7 +18,7 @@ export default function Apis() {
         return (<div>no apis</div>)
     }
     if (!apis) {
-        return (<div>loading ..</div>)
+        return (<div>loading22 ..</div>)
     }
     return (
         <div className="wrapper">
