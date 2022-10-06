@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@auth0/auth0-react": "^1.11.0",
+    "axios": "^0.27.2",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^16.0.3",
@@ -18,7 +19,9 @@
     "jade": "~1.11.0",
     "morgan": "~1.9.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.4.1",
+    "url": "^0.11.0"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
