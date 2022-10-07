@@ -11,7 +11,7 @@ module.exports = (env) => {
   // }, {});
   const devConfig = {
     entry: {
-      main: path.resolve(__dirname, './client/src/index.js'),
+      main: path.resolve(__dirname, './client/src/index.jsx'),
     },
     module: {
       rules: [
@@ -24,6 +24,11 @@ module.exports = (env) => {
               presets: ['@babel/preset-react', '@babel/preset-env']
             }
           }
+        },
+        {
+          test: /\.(ts|tsx)$/,
+          use: 'ts-loader',
+          exclude: /node_modules/,
         },
         {
           test: /\.css$/,
@@ -46,6 +51,7 @@ module.exports = (env) => {
       alias: {
         client: path.resolve(__dirname, 'client/src'),
       },
+      extensions: ['.tsx', '.ts', '.js', '.jsx'],
     },
     externals: {
       Settings: 'Settings',
