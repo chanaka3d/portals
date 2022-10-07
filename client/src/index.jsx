@@ -11,10 +11,10 @@ import {
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Router>
-    <Routes>
-      <Route path='/publisher/token' element={<TokenProcessor />} />
-      <Route exact path='/' element={<App />} />
-    </Routes>
-  </Router>
+    <Router>
+      <Routes>
+        <Route path='/publisher/token' element={<TokenProcessor />} />
+        <Route exact path='/' element={<App />} />
+      </Routes>
+    </Router>
 );
