@@ -3,6 +3,7 @@ import { sendTokenRequest } from "./sign-in";
 import { OIDCRequestParamsInterface } from './models/oidc-request-params';
 
 function TokenProcessor() {
+  console.log('info');
   const requestParams: OIDCRequestParamsInterface = {
     clientId: 'FbCSH23HybQMV9UlXJfeKHogAEHojzCO',
     scope: 'openid',

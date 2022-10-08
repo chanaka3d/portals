@@ -1,44 +1,35 @@
-import React from 'react';
-import './App.css';
-import Profile from './Profile';
-import LoginButton from './LoginButton';
-import LogoutButton from './LogoutButton';
-import Apis from './Apis';
+import * as React from "react";
+import { Routes, Route, Outlet, Link } from "react-router-dom";
+import TokenProcessor from './TokenProcessor';
+import Layout from "./Layout";
+import Apis from "./Apis";
 
-function App() {
-
+export default function App() {
   return (
-    <div className="App">
-      <nav className="container">
-        <input id="nav-toggle" type="checkbox" />
-        <div className="logo">
-          WSO2 <strong style={{"color": "#153b66", "font-weight": "800"}}>API Manager</strong>
-        </div>
-        <ul className="links">
-          <li className="list">
-            <a href="">Home</a>
-            <div className="home_underline"></div>
-          </li>
-          <li className="list">
-            <a href="">Products</a>
-            <div className="home_underline"></div>
-          </li>
-          <li className="list">
-            <a href="">About</a>
-            <div className="home_underline"></div>
-          </li>
-          <LoginButton /><LogoutButton />
-          <Profile />
-        </ul>
-        <label className="icon-burger">
-          <div className="line"></div>
-          <div className="line"></div>
-          <div className="line"></div>
-        </label>
-      </nav>
-      <Apis />
+    <div>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+            <Route exact path='/' element={<Apis />} />
+            <Route path='/apis' element={<Apis />} />
+            <Route path='/publisher/token' element={<TokenProcessor />} />
+            {/* Using path="*"" means "match anything", so this route
+                    acts like a catch-all for URLs that we don't have explicit
+                    routes for. */}
+          <Route path="*" element={<NoMatch />} />
+        </Route>
+      </Routes>
     </div>
   );
 }
 
-export default App;
+
+function NoMatch() {
+  return (
+    <div>
+      <h2>Nothing to see here!</h2>
+      <p>
+        <Link to="/">Go to the home page</Link>
+      </p>
+    </div>
+  );
+}

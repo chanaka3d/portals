@@ -105,3 +105,6 @@ dist
 
 # Macos
 .DS_Store
+
+# We are removing package-lock for now.. We will be adding this at the end of the project and will be using npm ci command instead of the npm i command.
+package-lock.json

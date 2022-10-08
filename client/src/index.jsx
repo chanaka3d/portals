@@ -1,20 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { Auth0Provider } from "@auth0/auth0-react";
+import { BrowserRouter } from "react-router-dom";
 import './index.css';
 import App from './App';
-import TokenProcessor from './TokenProcessor';
-import {
-  HashRouter as Router,
-  Routes,
-  Route
-} from "react-router-dom";
+import Settings from 'Settings';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <Router>
-      <Routes>
-        <Route path='/publisher/token' element={<TokenProcessor />} />
-        <Route exact path='/' element={<App />} />
-      </Routes>
-    </Router>
+  <React.StrictMode>
+    <BrowserRouter >
+    <App />
+  </BrowserRouter>
+  </React.StrictMode>
 );

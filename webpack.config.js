@@ -39,10 +39,11 @@ module.exports = (env) => {
     output: {
       path: path.resolve(__dirname, './client/public'),
       filename: 'bundle.js',
+      publicPath: '/'
     },
     plugins: [
       new HtmlWebpackPlugin({
-        title: 'Custom template',
+        title: 'WSO2 API Manager',
         // Load a custom template (lodash by default)
         template: './client/src/index.html'
       })
